@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FireProducts Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f5f6f8;color:#111}
+header{position:sticky;top:0;background:#111;color:#fff;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.logo{font-size:24px;font-weight:700;letter-spacing:1px}
+nav a{color:#fff;text-decoration:none;margin:0 14px;font-size:14px;opacity:.85}
+nav a:hover{opacity:1}
+.hero{height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(120deg,#111,#2c2c2c);color:#fff}
+.hero h1{font-size:52px;margin-bottom:10px}
+.hero p{opacity:.8}
+.section{padding:70px 40px}
+.section-title{font-size:32px;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.card{background:#fff;border-radius:14px;padding:20px;transition:.35s ease;box-shadow:0 10px 25px rgba(0,0,0,.07)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.15)}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;margin-bottom:10px}
+.low{background:#e7f5ff;color:#0077ff}
+.luxury{background:#fff0e7;color:#ff6600}
+.product-title{font-size:18px;margin:8px 0}
+.price{font-weight:600;margin-bottom:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;background:#111;color:#fff;text-decoration:none;font-size:13px;transition:.25s}
+.btn:hover{background:#333}
+footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px}
+.fade{opacity:0;transform:translateY(30px);transition:all .8s}
+.fade.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">FireProducts</div>
+<nav>
+<a href="#girl">Girls</a>
+<a href="#boy">Boys</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<div>
+<h1>Shop Everything</h1>
+<p>Low Budget & Luxury Collection</p>
+</div>
+</section>
+<section class="section fade" id="girl">
+<h2 class="section-title">Girls Collection</h2>
+<div class="grid">
+<div class="card">
+<span class="badge low">Low</span>
+<div class="product-title">Makeup Kit</div>
+<div class="price">₹799</div>
+<a class="btn" href="mailto:konwarsantanu687@gmail.com">Gmail Me</a>
+</div>
+<div class="card">
+<span class="badge luxury">Luxury</span>
+<div class="product-title">Designer Dress</div>
+<div class="price">₹4,999</div>
+<a class="btn" href="mailto:konwarsantanu687@gmail.com">Gmail Me</a>
+</div>
+<div class="card">
+<span class="badge luxury">Luxury</span>
+<div class="product-title">Premium Watch</div>
+<div class="price">₹7,999</div>
+<a class="btn" href="mailto:konwarsantanu687@gmail.com">Gmail Me</a>
+</div>
+</div>
+</section>
+<section class="section fade" id="boy">
+<h2 class="section-title">Boys Collection</h2>
+<div class="grid">
+<div class="card">
+<span class="badge low">Low</span>
+<div class="product-title">Casual Shirt</div>
+<div class="price">₹999</div>
+<a class="btn" href="mailto:konwarsantanu687@gmail.com">Gmail Me</a>
+</div>
+<div class="card">
+<span class="badge luxury">Luxury</span>
+<div class="product-title">Luxury Jacket</div>
+<div class="price">₹6,999</div>
+<a class="btn" href="mailto:konwarsantanu687@gmail.com">Gmail Me</a>
+</div>
+<div class="card">
+<span class="badge low">Low</span>
+<div class="product-title">Classic Watch</div>
+<div class="price">₹1,499</div>
+<a class="btn" href="mailto:konwarsantanu687@gmail.com">Gmail Me</a>
+</div>
+</div>
+</section>
+<section class="section fade" id="contact">
+<h2 class="section-title">Order Process</h2>
+<p>To order any product just click Gmail Me button and send product name.</p>
+</section>
+<footer>
+<p>© 2026 FireProducts Store</p>
+</footer>
+<script>
+const faders=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.2});
+faders.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
